@@ -1,6 +1,6 @@
 [package]
 name = "zero2prod"
-author = ["Matt G"]
+authors = ["Matt G <magreenberg@fullsail.edu>"]
 version = "0.1.0"
 edition = "2021"
 
@@ -11,13 +11,10 @@ path = "src/lib.rs"
 path = "src/main.rs"
 name = "zero2prod"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
-
 [dependencies]
 actix-web = "4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1", features = ["derive"] }
 
 [dev-dependencies]
 reqwest = "0.11"
